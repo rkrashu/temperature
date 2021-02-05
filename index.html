@@ -41,7 +41,7 @@
         document.getElementById("search-btn").addEventListener("click", function(){
             const input = document.getElementById("input").value
            
-            fetch("http://api.openweathermap.org/data/2.5/weather?q="+input+"&APPID=9c645cd9a4a5f21d3ca3a78c881f4f4c&units=metric")
+            fetch("https://api.openweathermap.org/data/2.5/weather?q="+input+"&APPID=9c645cd9a4a5f21d3ca3a78c881f4f4c&units=metric")
         .then(res => res.json())
         .then(data=> {
             const icon=data.weather[0].icon
@@ -49,6 +49,7 @@
             const cityName=data.name;
             const description=data.weather[0].description;
             const temp = data.main.temp;
+            console.log(data)
 
             document.getElementById("city-name").innerText = cityName;
             document.getElementById("description").innerText = description;
